@@ -23,7 +23,6 @@ def number_plate_extraction(img_filename):
         plate_gray=cv2.cvtColor(plate,cv2.COLOR_BGR2GRAY)
         (thresh,plate)=cv2.threshold(plate_gray,127,255,cv2.THRESH_BINARY)
         read=pytesseract.image_to_string(plate)
-        read=''.join(e for e in read if e.isalnum())
         cv2.rectangle(img,(x,y),(x+w,y+h),(51,51,255),2)
         cv2.rectangle(img,(x-1,y-40),(x+w+1,y),(51,51,255),-1)
         cv2.putText(img,read,(x,y-10),cv2.FONT_HERSHEY_SIMPLEX,0.9,(255,255,255),2)
