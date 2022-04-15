@@ -36,4 +36,4 @@ def number_plate_extraction(img_filename):
         exit()
     cv2.destroyAllWindows()
 
-number_plate_extraction("car_img.png")
+number_plate_extraction("input.jpg")
